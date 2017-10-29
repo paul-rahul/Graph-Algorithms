@@ -1,10 +1,10 @@
-#include<iostream>
-#include<vector>
-#include<queue>
+//bfs for n00bs
+
+#include<bits/stdc++.h>
 using namespace std;
 
-vector<int> v[10];
-bool fat[10];
+vector<int> v[100];
+bool fat[100];
 
 void bfs(int s)
 {
@@ -16,7 +16,7 @@ void bfs(int s)
 		int p=q.front();
 		cout<<p<<' ';
 		q.pop();
-		for(int i=0;i<v[p].size();i++)
+		for(int i=0;i<v[p].size();i++)	//basically you pick up each node and visit its children
 		{
 			if(fat[v[p][i]]==false)
 			{
@@ -30,23 +30,23 @@ void bfs(int s)
 
 void initialise()
 {
-	for(int i=0;i<10;i++)
+	for(int i=0;i<100;i++)
 	{
 		fat[i]=false;
 	}
 }
 int main()
 {
-	int nodes,edges,x,y;
-	cin>>nodes>>edges;
-	for(int i=1;i<=edges;i++)
+	int nodes_of_graph,edges_of_graph,x,y;
+	cin>>nodes_of_graph>>edges_of_graph;
+	for(int i=1;i<=edges_of_graph;i++)
 	{
 		cin>>x>>y;
 		v[x].push_back(y);
 		//v[y].push_back(x);
 	}
 	initialise();
-	for(int i=1;i<=nodes;i++)
+	for(int i=1;i<=nodes_of_graph;i++)
 	{
 		if(fat[i]==false)
 		{

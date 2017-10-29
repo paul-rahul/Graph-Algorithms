@@ -1,10 +1,9 @@
-#include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
 
 using namespace std;
 
-vector<int>v[10];
-bool fat[10];
+vector<int>v[100];
+bool fat[100];
 	
 void dfs(int s)
 {
@@ -19,7 +18,7 @@ void dfs(int s)
 }
 void initialise()
 {
-	for(int i=0;i<10;i++)
+	for(int i=0;i<100;i++)
 	{
 		fat[i]=false;
 	}
