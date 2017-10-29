@@ -1,6 +1,6 @@
 //kruskal bitches
 
-//union set DS used. Check codemonk for it
+//union set DS used. Check codemonk v2.0 for it
 
 #include<bits/stdc++.h>
 
@@ -35,7 +35,7 @@ void union1(int x, int y)	//to make parent
 	id[p]=id[q];
 }
 
-int kruskal()
+int kruskal()	//main func.
 {
 	int minimumcost=0;
 	for(int i=0;i<edges;i++)
