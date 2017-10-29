@@ -1,3 +1,7 @@
+//kruskal bitches
+
+//union set DS used. Check codemonk for it
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -14,7 +18,7 @@ void initialise()
 	for(int i=0;i<1000000;i++)	id[i]=i;
 }
 
-int root(int x)
+int root(int x)	//to find the parent
 {
 	while(id[x]!=x)
 	{
@@ -24,7 +28,7 @@ int root(int x)
 	return x;
 }
 
-void union1(int x, int y)
+void union1(int x, int y)	//to make parent
 {
 	int p=root(x);
 	int q=root(y);
