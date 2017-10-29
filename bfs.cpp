@@ -1,16 +1,16 @@
-//bfs for n00bs
+//bfs for n00bies
 
 #include<bits/stdc++.h>
 using namespace std;
 
 vector<int> v[100];
-bool fat[100];
+bool visited[100];
 
 void bfs(int s)
 {
 	queue<int>q;
 	q.push(s);
-	fat[s]=true;
+	visited[s]=true;
 	while(!q.empty())
 	{
 		int p=q.front();
@@ -18,10 +18,10 @@ void bfs(int s)
 		q.pop();
 		for(int i=0;i<v[p].size();i++)	//basically you pick up each node and visit its children
 		{
-			if(fat[v[p][i]]==false)
+			if(visited[v[p][i]]==false)
 			{
 				q.push(v[p][i]);
-				fat[v[p][i]]=true;
+				visited[v[p][i]]=true;
 			}
 		}
 
@@ -32,7 +32,7 @@ void initialise()
 {
 	for(int i=0;i<100;i++)
 	{
-		fat[i]=false;
+		visited[i]=false;
 	}
 }
 int main()
@@ -48,7 +48,7 @@ int main()
 	initialise();
 	for(int i=1;i<=nodes_of_graph;i++)
 	{
-		if(fat[i]==false)
+		if(visited[i]==false)
 		{
 			bfs(i);
 		}
